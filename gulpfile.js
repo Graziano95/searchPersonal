@@ -51,13 +51,13 @@ const sprite = () => {
 
 // // images
 const optimizeImages = () => {
-  return gulp.src('source/img/**/*.{jpg,png}')
+  return gulp.src('source/img/**/*.{jpg,png,JPG,PNG}')
     .pipe(squoosh())
     .pipe(gulp.dest('build/img'))
 }
 
 const copyImages = () => {
-  return gulp.src('source/img/**/*.{png,jpg,svg}')
+  return gulp.src('source/img/**/*.{png,jpg,svg,JPG,PNG}')
     .pipe(gulp.dest('build/img'))
 }
 
@@ -84,6 +84,7 @@ const copy = (done) => {
   gulp.src([
   'source/fonts/*.{woff2,woff}',
   'source/*.ico',
+  'source/img/video/*',
   ], {
   base: 'source'
   })
